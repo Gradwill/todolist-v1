@@ -1,0 +1,22 @@
+<!-- Anything valid for an html is valid for an ejs -->
+<%- include('header'); -%>
+
+  <div class="box" id="heading">
+    <h1><%= itemTitle %></h1>
+  </div>
+
+  <div class="box">
+    <% for(let i = 0; i < newItems.length; i++) { %>
+    <div class="item">
+      <input type="checkbox">
+      <p><%= newItems[i] %> </p>
+    </div>
+
+    <% } %>
+    <form class="item" action="/" method="post">
+      <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+      <button type="submit" name="list" value = <%= itemTitle %> >+</button>
+    </form>
+  </div>
+
+<%- include('footer'); -%>
