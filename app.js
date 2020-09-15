@@ -17,7 +17,7 @@ app.use(express.static("public"));
 app.set('view engine', 'ejs');
 
 app.get("/", function(req, res) {
-  let day = date();
+  let day = date.getDate();
   // We need the views folder and the .ejs file in order for this to work
   res.render('list', { itemTitle: day,newItems: foodItems });
 });
